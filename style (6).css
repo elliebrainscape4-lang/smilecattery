@@ -5334,22 +5334,3 @@ body:not(.loaded){
 /*==================================================
 END OF STYLE.CSS
 ==================================================*/
-/* Slightly zoom images 1, 2 and 4 in the first cattery card row */
-/*==================================================
-CARD-FILL IMAGES
-Used for cards 1, 2 and 4 in the "Your Visit Begins
-Here" row so they fill the rounded box edge-to-edge,
-matching the look of the Reception photo.
-==================================================*/
-
-.card-fill{
-
-    object-fit:cover;
-
-}
-
-.card:hover .card-fill{
-
-    transform:scale(1.08);
-
-}
