@@ -8,7 +8,6 @@ import {
 import {
     doc,
     setDoc,
-    getDoc,
     serverTimestamp
 } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-firestore.js";
 
@@ -20,14 +19,66 @@ const message = document.getElementById("message");
 const signupBtn = document.getElementById("signupBtn");
 const loginBtn = document.getElementById("loginBtn");
 
+function setBusy(isBusy){
+
+    signupBtn.disabled = isBusy;
+
+    loginBtn.disabled = isBusy;
+
+}
+
+function friendlyError(err){
+
+    const code = err.code || "";
+
+    if(code.includes("email-already-in-use")){
+
+        return "That email already has an account — try logging in instead.";
+
+    }
+
+    if(code.includes("weak-password")){
+
+        return "Please choose a password with at least 6 characters.";
+
+    }
+
+    if(code.includes("invalid-email")){
+
+        return "Please enter a valid email address.";
+
+    }
+
+    if(code.includes("invalid-credential") || code.includes("wrong-password") || code.includes("user-not-found")){
+
+        return "Incorrect email or password — please try again.";
+
+    }
+
+    return err.message;
+
+}
+
 signupBtn.addEventListener("click", async () => {
+
+    message.textContent = "";
+
+    if(!username.value.trim() || !email.value.trim() || !password.value){
+
+        message.textContent = "Please fill in a username, email and password.";
+
+        return;
+
+    }
+
+    setBusy(true);
 
     try {
 
         const userCredential =
         await createUserWithEmailAndPassword(
             auth,
-            email.value,
+            email.value.trim(),
             password.value
         );
 
@@ -35,9 +86,9 @@ signupBtn.addEventListener("click", async () => {
             doc(db, "users", userCredential.user.uid),
             {
 
-                username: username.value,
+                username: username.value.trim(),
 
-                email: email.value,
+                email: email.value.trim(),
 
                 role: "member",
 
@@ -46,14 +97,31 @@ signupBtn.addEventListener("click", async () => {
             }
         );
 
-        message.textContent =
-        "✅ Account created!";
+        sessionStorage.setItem("smileCatteryUsername", username.value.trim());
+
+        message.style.color = "var(--green)";
+
+        message.textContent = "✅ Account created! Redirecting...";
+
+        setTimeout(()=>{
+
+            window.location.href = "forum.html";
+
+        }, 700);
 
     }
 
     catch(err){
 
-        message.textContent = err.message;
+        message.style.color = "var(--terracotta)";
+
+        message.textContent = friendlyError(err);
+
+    }
+
+    finally{
+
+        setBusy(false);
 
     }
 
@@ -61,25 +129,45 @@ signupBtn.addEventListener("click", async () => {
 
 loginBtn.addEventListener("click", async ()=>{
 
+    message.textContent = "";
+
+    if(!email.value.trim() || !password.value){
+
+        message.textContent = "Please enter your email and password.";
+
+        return;
+
+    }
+
+    setBusy(true);
+
     try{
 
         await signInWithEmailAndPassword(
 
             auth,
 
-            email.value,
+            email.value.trim(),
 
             password.value
 
         );
 
-        window.location.href="forum.html";
+        window.location.href = "forum.html";
 
     }
 
     catch(err){
 
-        message.textContent=err.message;
+        message.style.color = "var(--terracotta)";
+
+        message.textContent = friendlyError(err);
+
+    }
+
+    finally{
+
+        setBusy(false);
 
     }
 
