@@ -4894,6 +4894,286 @@ SHOP
 
 
 /*==================================================
+CAT CHAT — AUTH PAGES (login.html / forum.html)
+==================================================*/
+
+.auth-body{
+
+    background:var(--cream);
+
+    min-height:100vh;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:40px 20px;
+
+}
+
+.auth-box{
+
+    width:min(460px,100%);
+
+    background:white;
+
+    border-radius:25px;
+
+    padding:50px 42px;
+
+    box-shadow:var(--shadow);
+
+    text-align:center;
+
+}
+
+.auth-logo{
+
+    width:70px;
+
+    height:70px;
+
+    margin:0 auto 18px;
+
+    border-radius:50%;
+
+    background:var(--green-light);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    color:var(--green);
+
+    font-size:1.8rem;
+
+}
+
+.auth-box h1{
+
+    font-size:1.7rem;
+
+    margin-bottom:6px;
+
+}
+
+.auth-box .auth-subtitle{
+
+    color:var(--grey);
+
+    font-size:.92rem;
+
+    margin-bottom:30px;
+
+}
+
+.auth-box input{
+
+    width:100%;
+
+    padding:14px 18px;
+
+    border-radius:12px;
+
+    border:2px solid var(--green-light);
+
+    font-family:inherit;
+
+    font-size:1rem;
+
+    color:var(--text);
+
+    margin-bottom:16px;
+
+}
+
+.auth-box input:focus{
+
+    outline:none;
+
+    border-color:var(--green);
+
+}
+
+.auth-buttons{
+
+    display:flex;
+
+    gap:14px;
+
+    margin-top:8px;
+
+}
+
+.auth-buttons .button{
+
+    flex:1;
+
+    padding:14px 18px;
+
+    font-size:.92rem;
+
+}
+
+#message{
+
+    margin-top:20px;
+
+    font-size:.88rem;
+
+    color:var(--terracotta);
+
+    min-height:1.2em;
+
+}
+
+.auth-back{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    margin-top:26px;
+
+    color:var(--green);
+
+    font-weight:600;
+
+    font-size:.88rem;
+
+}
+
+.auth-back:hover{
+
+    text-decoration:underline;
+
+}
+
+
+/*==================================================
+CAT CHAT — LIVE FORUM PAGE (forum.html)
+==================================================*/
+
+.forum-header{
+
+    position:sticky;
+
+    top:0;
+
+    z-index:999;
+
+    background:rgba(255,255,255,.96);
+
+    backdrop-filter:blur(12px);
+
+    box-shadow:0 2px 15px rgba(0,0,0,.06);
+
+    padding:18px 0;
+
+}
+
+.forum-header .container{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    flex-wrap:wrap;
+
+    gap:14px;
+
+}
+
+.forum-header-title{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    color:var(--green-dark);
+
+    font-weight:700;
+
+    font-size:1.15rem;
+
+}
+
+.forum-header-title i{
+
+    color:var(--terracotta);
+
+}
+
+.forum-header-user{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    font-size:.9rem;
+
+    color:var(--grey);
+
+}
+
+.forum-header-user strong{
+
+    color:var(--green-dark);
+
+}
+
+.forum-logout{
+
+    background:none;
+
+    border:2px solid var(--green-light);
+
+    color:var(--green-dark);
+
+    padding:9px 18px;
+
+    border-radius:50px;
+
+    font-weight:600;
+
+    font-size:.85rem;
+
+    cursor:pointer;
+
+    transition:var(--transition);
+
+}
+
+.forum-logout:hover{
+
+    background:var(--green);
+
+    border-color:var(--green);
+
+    color:white;
+
+}
+
+.forum-main{
+
+    padding:60px 0 90px;
+
+}
+
+
+/*==================================================
 MEET THE TEAM
 ==================================================*/
 
