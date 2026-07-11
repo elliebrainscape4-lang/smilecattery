@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Cat Chat Forum | Smile Cattery</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header class="forum-header">
+
+<div class="container">
+
+<a href="index.html" class="forum-header-title">
+
+<i class="fa-solid fa-paw"></i>
+
+Smile Cattery — Cat Chat
+
+</a>
+
+<div class="forum-header-user">
+
+<span id="forumWelcome">Loading...</span>
+
+<button class="forum-logout" id="logoutBtn">
+
+<i class="fa-solid fa-arrow-right-from-bracket"></i>
+
+Log Out
+
+</button>
+
+</div>
+
+</div>
+
+</header>
+
+<main class="forum-main">
+
+<div class="container narrow">
+
+<div class="catchat-boards" id="catchatBoards"></div>
+
+<div class="catchat-panel" id="catchatBoardView">
+
+<div class="catchat-panel-top">
+
+<h3 id="catchatBoardTitle">General Chat</h3>
+
+<button class="button" id="catchatNewThreadBtn">
+
+<i class="fa-solid fa-plus"></i>
+
+New Discussion
+
+</button>
+
+</div>
+
+<div class="catchat-thread-list" id="catchatThreadList">
+
+<div class="catchat-empty">Loading discussions...</div>
+
+</div>
+
+</div>
+
+<div class="catchat-panel" id="catchatThreadView" style="display:none;">
+
+<span class="catchat-back" id="catchatBackBtn">
+
+<i class="fa-solid fa-arrow-left"></i>
+
+Back to board
+
+</span>
+
+<h3 id="catchatThreadTitle"></h3>
+
+<p class="catchat-thread-meta" id="catchatThreadMeta"></p>
+
+<p id="catchatThreadBody"></p>
+
+<div class="catchat-replies" id="catchatReplies"></div>
+
+<div class="catchat-form" id="catchatReplyForm">
+
+<textarea id="catchatReplyMessage" rows="3" placeholder="Write a reply..."></textarea>
+
+<button class="button" id="catchatSubmitReply">
+
+Post Reply
+
+</button>
+
+</div>
+
+</div>
+
+<div class="catchat-panel" id="catchatNewThreadForm" style="display:none;">
+
+<span class="catchat-back" id="catchatCancelNewThread">
+
+<i class="fa-solid fa-arrow-left"></i>
+
+Cancel
+
+</span>
+
+<h3>Start a New Discussion</h3>
+
+<div class="catchat-form">
+
+<input type="text" id="catchatNewTitle" placeholder="Discussion title">
+
+<textarea id="catchatNewMessage" rows="4" placeholder="What would you like to share or ask?"></textarea>
+
+<button class="button" id="catchatSubmitThread">
+
+Post Discussion
+
+</button>
+
+</div>
+
+</div>
+
+<div class="catchat-note">
+
+<i class="fa-solid fa-circle-info"></i>
+
+Cat Chat is a friendly, moderated space for our own cat owners. Everything posted here is visible to every visitor in real time — please be kind.
+
+</div>
+
+</div>
+
+</main>
+
+<script type="module" src="forum.js"></script>
+
+</body>
+
+</html>
