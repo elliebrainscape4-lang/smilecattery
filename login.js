@@ -17,6 +17,9 @@ const email = document.getElementById("email");
 const password = document.getElementById("password");
 const message = document.getElementById("message");
 
+const signupBtn = document.getElementById("signupBtn");
+const loginBtn = document.getElementById("loginBtn");
+
 signupBtn.addEventListener("click", async () => {
 
     try {
