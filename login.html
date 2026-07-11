@@ -6,50 +6,77 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Smile Cattery Community</title>
+<title>Cat Chat Login | Smile Cattery</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
 <link rel="stylesheet" href="style.css">
 
 </head>
 
-<body>
+<body class="auth-body">
 
-<h1>Smile Cattery Community</h1>
+<div class="auth-box">
+
+<div class="auth-logo">
+
+<i class="fa-solid fa-paw"></i>
+
+</div>
+
+<h1>Cat Chat</h1>
+
+<p class="auth-subtitle">
+
+Sign in or create a free account to join the discussion.
+
+</p>
 
 <input
 id="username"
 type="text"
 placeholder="Choose a username">
 
-<br><br>
-
 <input
 id="email"
 type="email"
-placeholder="Email">
-
-<br><br>
+placeholder="Email address">
 
 <input
 id="password"
 type="password"
 placeholder="Password">
 
-<br><br>
+<div class="auth-buttons">
 
-<button id="signupBtn">
-
-Create Account
-
-</button>
-
-<button id="loginBtn">
+<button id="loginBtn" class="button outline">
 
 Login
 
 </button>
 
+<button id="signupBtn" class="button">
+
+Create Account
+
+</button>
+
+</div>
+
 <p id="message"></p>
+
+<a href="index.html" class="auth-back">
+
+<i class="fa-solid fa-arrow-left"></i>
+
+Back to Smile Cattery
+
+</a>
+
+</div>
 
 <script type="module" src="login.js"></script>
 
