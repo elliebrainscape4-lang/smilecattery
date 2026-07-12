@@ -6007,6 +6007,16 @@ IN MEMORIAM
 
 }
 
+.memoriam-silhouette{
+
+    color:#c7c2b8;
+
+    font-size:3.6rem;
+
+    filter:none;
+
+}
+
 .memoriam-card h3{
 
     color:#5c5952;
@@ -6022,6 +6032,16 @@ IN MEMORIAM
     font-style:italic;
 
     font-size:.92rem;
+
+    margin-bottom:8px;
+
+}
+
+.memoriam-owner{
+
+    color:#8a8578;
+
+    font-size:.85rem;
 
     margin-bottom:16px;
 
